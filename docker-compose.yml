@@ -1,0 +1,49 @@
+# Docker Compose file version
+services:
+
+  # Service name
+  playwright:
+
+    # Build an image from the Dockerfile
+    build:
+
+      # Build context
+      #
+      # "." means current directory.
+      # Docker sends all files from this folder
+      # to the Docker build engine.
+      context: .
+      dockerfile: Dockerfile
+
+    # Optional container name.
+    # Easier to identify in docker ps output.
+    container_name: playwright-tests
+
+    # Mount local folders into the container.
+    volumes:
+
+      # Playwright HTML report
+      #
+      # Host:
+      # ./playwright-report
+      #
+      # Container:
+      # /app/playwright-report
+      #
+      # Reports generated inside Docker
+      # become available on the host machine.
+      - ./playwright-report:/app/playwright-report
+
+      # Stores screenshots, videos and traces.
+      - ./test-results:/app/test-results
+
+    # Environment variables available inside container.
+    environment:
+
+      # Common CI variable used by Playwright
+      - CI=true
+
+    # Override Dockerfile CMD if needed.
+    #
+    # Example:
+    # command: npx playwright test --grep "@smoke"

@@ -1,0 +1,64 @@
+# Node dependencies
+node_modules
+npm-debug.log
+yarn-error.log
+
+# Playwright artifacts
+playwright-report
+test-results
+blob-report
+
+# Coverage reports
+coverage
+
+# Git files
+.git
+.gitignore
+
+# GitHub Actions
+.github
+
+# IDE files
+.vscode
+.idea
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.*
+
+# Logs
+*.log
+
+# Temporary files
+tmp
+temp
+
+# Cache
+.cache
+.npm
+
+# Documentation
+README.md
+docs
+
+# Docker files (optional)
+docker-compose.yml
+
+# TypeScript build output
+dist
+build
+out
+
+# Screenshots and videos generated during tests
+test-results/
+playwright-report/
+screenshots/
+videos/
+traces/
+
+# Local Playwright browser binaries
+ms-playwright
